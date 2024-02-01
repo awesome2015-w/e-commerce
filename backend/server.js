@@ -9,7 +9,8 @@ import { notFound, errorHandler} from "./middleware/errorHandler.js";
 connectDB();
 const app = express();
 
-console.log();
+app.use(notFound);
+app.use(errorHandler);
 app.get("/", (req, res) => {
   res.send(`Api is running`);
 });
